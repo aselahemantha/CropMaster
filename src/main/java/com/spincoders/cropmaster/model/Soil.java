@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "Soil")
 public class Soil {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int farmlandID;
 
     @Column(name = "temperature")

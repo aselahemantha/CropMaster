@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Harvest {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int methodID;
 
     @Column(name = "method")

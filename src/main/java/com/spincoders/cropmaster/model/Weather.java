@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 public class Weather {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int farmlandID;
 
     @Column(name = "temperature")

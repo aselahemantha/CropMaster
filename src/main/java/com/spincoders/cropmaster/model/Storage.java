@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Storage {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int storageID;
 
     @Column(name = "name")

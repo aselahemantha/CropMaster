@@ -8,7 +8,7 @@ public class Chemical {
 
     @Id
     @Column(name = "chemicalID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int chemicalID;
 
     @Column(name = "name")
@@ -17,7 +17,7 @@ public class Chemical {
     @Column(name = "handling")
     private String handling;
 
-    @Column(name = "usage")
+    @Column(name = "usageInfo")
     private String usage;
 
     @Column(name = "manufacturer")

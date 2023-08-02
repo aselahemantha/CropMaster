@@ -8,7 +8,7 @@ public class Machinery {
 
     @Id
     @Column(name = "machineID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int machineID;
 
     @Column(name = "name")

@@ -9,7 +9,7 @@ import java.awt.geom.GeneralPath;
 public class Disease {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "diseaseID")
     private int diseaseID;
 
@@ -24,4 +24,47 @@ public class Disease {
 
     @Column(name = "symptom")
     private String symptom;
+
+    public Disease() {
+    }
+
+    public int getDiseaseID() {
+        return diseaseID;
+    }
+
+    public void setDiseaseID(int diseaseID) {
+        this.diseaseID = diseaseID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getSymptom() {
+        return symptom;
+    }
+
+    public void setSymptom(String symptom) {
+        this.symptom = symptom;
+    }
 }

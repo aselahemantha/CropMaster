@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Irrigation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int systemID;
 
     @Column(name = "delivery")
