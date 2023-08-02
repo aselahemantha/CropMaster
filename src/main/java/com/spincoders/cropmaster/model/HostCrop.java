@@ -16,11 +16,10 @@ public class HostCrop {
     @Column(name = "diseaseID")
     private int diseaseID;
 
-    @Column(name = "chemicalID")
-    private int chemicalID;
+    @Column(name = "nic")
+    private String nic;
 
-    @Column(name = "machineID")
-    private int machineID;
+
 
     public HostCrop() {
     }
@@ -49,19 +48,11 @@ public class HostCrop {
         this.diseaseID = diseaseID;
     }
 
-    public int getChemicalID() {
-        return chemicalID;
+    public String getNic() {
+        return nic;
     }
 
-    public void setChemicalID(int chemicalID) {
-        this.chemicalID = chemicalID;
-    }
-
-    public int getMachineID() {
-        return machineID;
-    }
-
-    public void setMachineID(int machineID) {
-        this.machineID = machineID;
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 }
