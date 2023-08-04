@@ -25,6 +25,15 @@ public class Farmland {
     @Column(name = "cropID")
     private int cropID;
 
+    @Column(name = "irrigationID")
+    private int irrigationID;
+
+    @Column(name = "harvestID")
+    private int harvestID;
+
+    @Column(name = "storageID")
+    private int storageID;
+
     public Farmland() {
     }
 
@@ -75,4 +84,30 @@ public class Farmland {
     public void setCropID(int cropID) {
         this.cropID = cropID;
     }
+
+    public int getIrrigationID() {
+        return irrigationID;
+    }
+
+    public void setIrrigationID(int irrigationID) {
+        this.irrigationID = irrigationID;
+    }
+
+    public int getHarvestID() {
+        return harvestID;
+    }
+
+    public void setHarvestID(int harvestID) {
+        this.harvestID = harvestID;
+    }
+
+    public int getStorageID() {
+        return storageID;
+    }
+
+    public void setStorageID(int storageID) {
+        this.storageID = storageID;
+    }
+
+
 }

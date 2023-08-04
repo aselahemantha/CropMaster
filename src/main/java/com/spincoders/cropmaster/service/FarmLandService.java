@@ -18,4 +18,10 @@ public interface FarmLandService {
 
     public Farmland updateAssignedCrop(int farmlandId, int cropId);
 
+    public Farmland updateAssignedIrrigation(int farmlandId, int irrigationId);
+
+    public Farmland updateAssignedStorage(int farmlandId, int storageId);
+
+    public Farmland updateAssignedHarvest(int farmlandId, int harvestId);
+
 }

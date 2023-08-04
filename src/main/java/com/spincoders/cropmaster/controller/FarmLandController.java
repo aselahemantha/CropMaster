@@ -42,4 +42,19 @@ public class FarmLandController {
         return farmLandService.updateAssignedCrop(farmlandId, cropId);
     }
 
+    @PutMapping("/updateIrrigation/{farmlandId}/{irrigationId}")
+    public Farmland updateAssignedIrrigation(@PathVariable int farmlandId, @PathVariable int irrigationId) {
+        return farmLandService.updateAssignedIrrigation(farmlandId, irrigationId);
+    }
+
+    @PutMapping("/updateStorage/{farmlandId}/{storageId}")
+    public Farmland updateAssignedStorage(@PathVariable int farmlandId, @PathVariable int storageId) {
+        return farmLandService.updateAssignedStorage(farmlandId, storageId);
+    }
+
+    @PutMapping("/updateHarvest/{farmlandId}/{harvestId}")
+    public Farmland updateAssignedHarvest(@PathVariable int farmlandId, @PathVariable int harvestId) {
+        return farmLandService.updateAssignedHarvest(farmlandId, harvestId);
+    }
+
 }

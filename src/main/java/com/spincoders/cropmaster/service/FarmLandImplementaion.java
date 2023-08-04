@@ -43,4 +43,37 @@ public class FarmLandImplementaion implements FarmLandService{
         }
         return null;
     }
+
+    @Override
+    public Farmland updateAssignedIrrigation(int farmlandId, int irrigationId) {
+        Farmland farmland = farmLandRepositary.findById(farmlandId).orElse(null);
+        if (farmland != null) {
+            // Update the assigned irrigation
+            farmland.setIrrigationID(irrigationId);
+            return farmLandRepositary.save(farmland);
+        }
+        return null;
+    }
+
+    @Override
+    public Farmland updateAssignedStorage(int farmlandId, int storageId) {
+        Farmland farmland = farmLandRepositary.findById(farmlandId).orElse(null);
+        if (farmland != null) {
+            // Update the assigned storage
+            farmland.setStorageID(storageId);
+            return farmLandRepositary.save(farmland);
+        }
+        return null;
+    }
+
+    @Override
+    public Farmland updateAssignedHarvest(int farmlandId, int harvestId) {
+        Farmland farmland = farmLandRepositary.findById(farmlandId).orElse(null);
+        if (farmland != null) {
+            // Update the assigned harvest
+            farmland.setHarvestID(harvestId);
+            return farmLandRepositary.save(farmland);
+        }
+        return null;
+    }
 }
