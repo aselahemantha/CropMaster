@@ -24,4 +24,12 @@ public interface FarmLandService {
 
     public Farmland updateAssignedHarvest(int farmlandId, int harvestId);
 
+    public List<Farmland> getFarmlandByNic(String nic);
+
+    public Farmland updateFarmer(int farmlandId, String farmerNIC);
+
+    public List<Farmland> getFarmlandNoNic();
+
+    public List<Farmland> getFarmlandNic();
+
 }

@@ -76,4 +76,30 @@ public class FarmLandImplementaion implements FarmLandService{
         }
         return null;
     }
+
+    @Override
+    public List<Farmland> getFarmlandByNic(String nic) {
+        return farmLandRepositary.findFarmlandByFarmer(nic);
+    }
+
+    @Override
+    public Farmland updateFarmer(int farmlandId, String farmerNIC) {
+        Farmland farmland = farmLandRepositary.findById(farmlandId).orElse(null);
+        if (farmland != null) {
+            // Update the assigned crop
+            farmland.setNic(farmerNIC);
+            return farmLandRepositary.save(farmland);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Farmland> getFarmlandNoNic() {
+        return farmLandRepositary.findFarmlandNoNic();
+    }
+
+    @Override
+    public List<Farmland> getFarmlandNic() {
+        return farmLandRepositary.findFarmlandNic();
+    }
 }

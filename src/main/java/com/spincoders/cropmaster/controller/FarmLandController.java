@@ -32,6 +32,11 @@ public class FarmLandController {
         return farmLandService.getCropFarmland(nic);
     }
 
+    @GetMapping("/getAll/{nic}")
+    public List<Farmland> getFarmlandByNic(@PathVariable String nic) {
+        return farmLandService.getFarmlandByNic(nic);
+    }
+
     @GetMapping("/uncroped/{nic}")
     public List<Farmland> getUncropedFarmlands(@PathVariable String nic) {
         return farmLandService.getUncropFarmland(nic);
@@ -55,6 +60,21 @@ public class FarmLandController {
     @PutMapping("/updateHarvest/{farmlandId}/{harvestId}")
     public Farmland updateAssignedHarvest(@PathVariable int farmlandId, @PathVariable int harvestId) {
         return farmLandService.updateAssignedHarvest(farmlandId, harvestId);
+    }
+
+    @PutMapping("/updateFarmer/{farmlandId}/{farmerNic}")
+    public Farmland updateFarmerForFarmland(@PathVariable int farmlandId, @PathVariable String farmerNic) {
+        return farmLandService.updateFarmer(farmlandId, farmerNic);
+    }
+
+    @GetMapping("/noNic")
+    public List<Farmland> getFarmlandNoNic() {
+        return farmLandService.getFarmlandNoNic();
+    }
+
+    @GetMapping("/nic")
+    public List<Farmland> getFarmlandNic() {
+        return farmLandService.getFarmlandNoNic();
     }
 
 }

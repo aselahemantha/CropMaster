@@ -1,15 +1,13 @@
 package com.spincoders.cropmaster.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Owner")
 public class Owner {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ownerID;
 
     @Column(name = "nic")
@@ -27,8 +25,6 @@ public class Owner {
     @Column(name = "mobile")
     private String mobile;
 
-    @Column(name = "experince")
-    private String experince;
 
     public Owner() {
     }
@@ -81,11 +77,4 @@ public class Owner {
         this.mobile = mobile;
     }
 
-    public String getExperince() {
-        return experince;
-    }
-
-    public void setExperince(String experince) {
-        this.experince = experince;
-    }
 }

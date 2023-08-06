@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OwnerRepositary extends JpaRepository<Owner, Integer> {
+
+    Owner findByNic(String nic);
 }
