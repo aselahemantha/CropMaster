@@ -1,12 +1,12 @@
 package com.spincoders.cropmaster.controller;
 
 import com.spincoders.cropmaster.model.Crop;
-import com.spincoders.cropmaster.model.Farmland;
 import com.spincoders.cropmaster.service.CropService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/crop")
@@ -25,6 +25,11 @@ public class CropController {
     @GetMapping("/getAll")
     public List<Crop> getAllCrops(){
         return cropService.getAllCrop();
+    }
+
+    @GetMapping("/getbyID/{cropID}")
+    public Optional<Crop> getCropById(@PathVariable int cropID){
+        return cropService.getCropByID(cropID);
     }
 
 }

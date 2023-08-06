@@ -77,4 +77,9 @@ public class FarmLandController {
         return farmLandService.getFarmlandNoNic();
     }
 
+    @GetMapping("getCrop/{farmlandId}")
+    public int getFarmlandCropID(@PathVariable int farmlandId) {
+        return farmLandService.getCropID(farmlandId);
+    }
+
 }

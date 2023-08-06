@@ -23,4 +23,9 @@ public class MachineryUsageImplementation implements MachineryUsageService{
     public List<MachineryUsage> getAllMachineryUsage() {
         return machineryUsageRepositary.findAll();
     }
+
+    @Override
+    public List<Object[]> getMachineIdsAndNicsByFarmlandID(int farmlandID) {
+        return machineryUsageRepositary.findMachineIdsAndNicsByFarmlandID(farmlandID);
+    }
 }

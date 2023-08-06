@@ -32,4 +32,6 @@ public interface FarmLandService {
 
     public List<Farmland> getFarmlandNic();
 
+    public int getCropID(int farmlandId);
+
 }

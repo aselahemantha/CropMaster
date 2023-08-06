@@ -102,4 +102,14 @@ public class FarmLandImplementaion implements FarmLandService{
     public List<Farmland> getFarmlandNic() {
         return farmLandRepositary.findFarmlandNic();
     }
+
+    @Override
+    public int getCropID(int farmlandId) {
+        Farmland farmland = farmLandRepositary.findById(farmlandId).orElse(null);
+        if (farmland != null) {
+            return farmland.getCropID();
+        }else{
+            return 0;
+        }
+    }
 }

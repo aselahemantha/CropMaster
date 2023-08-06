@@ -9,4 +9,6 @@ public interface ChemicalUsageService {
     public ChemicalUsage saveChemicalUsage(ChemicalUsage chemicalUsage);
 
     public List<ChemicalUsage> getAllChemicalUsage();
+
+    public List<Object[]> getChemicalIdsAndNicsByFarmlandID(int farmlandID);
 }

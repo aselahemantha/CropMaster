@@ -10,4 +10,6 @@ public interface MachineryUsageService {
 
     public List<MachineryUsage> getAllMachineryUsage();
 
+    public List<Object[]> getMachineIdsAndNicsByFarmlandID(int farmlandID);
+
 }

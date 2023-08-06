@@ -27,4 +27,9 @@ public class MachineryUsageController {
         return machineryUsageService.getAllMachineryUsage();
     }
 
+    @GetMapping("/getDetails/{farmlandID}")
+    public List<Object[]> getMachineIdsAndNicsByFarmlandID(@PathVariable int farmlandID) {
+        return machineryUsageService.getMachineIdsAndNicsByFarmlandID(farmlandID);
+    }
+
 }

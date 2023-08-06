@@ -22,4 +22,10 @@ public class ChemicalUsageImplementation implements ChemicalUsageService{
     public List<ChemicalUsage> getAllChemicalUsage() {
         return chemicalUsageRepositary.findAll();
     }
+
+    @Override
+    public List<Object[]> getChemicalIdsAndNicsByFarmlandID(int farmlandID) {
+        return chemicalUsageRepositary.findChemicalIdsAndNicsByFarmlandID(farmlandID);
+
+    }
 }

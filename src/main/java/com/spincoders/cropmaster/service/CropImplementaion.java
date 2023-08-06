@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CropImplementaion implements CropService {
@@ -21,5 +22,10 @@ public class CropImplementaion implements CropService {
     @Override
     public List<Crop> getAllCrop() {
         return cropRepositary.findAll();
+    }
+
+    @Override
+    public Optional<Crop> getCropByID(int cropID) {
+        return cropRepositary.findById(cropID);
     }
 }
