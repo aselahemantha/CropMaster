@@ -9,4 +9,6 @@ public interface HostCropService {
 
     public List<HostCrop> getAllHostCrop();
 
+    public List<HostCrop> getDiseaseByFarmland(int farmlandID);
+
 }

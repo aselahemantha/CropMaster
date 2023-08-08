@@ -32,4 +32,9 @@ public class ChemicalUsageController {
         return chemicalUsageService.getChemicalIdsAndNicsByFarmlandID(farmlandID);
     }
 
+    @GetMapping("/getChemical/{farmlandID}")
+    public List<ChemicalUsage> getChemicalByFarmland(@PathVariable int farmlandID){
+        return chemicalUsageService.getChemicalByFarmland(farmlandID);
+    }
+
 }

@@ -11,4 +11,6 @@ public interface ChemicalUsageService {
     public List<ChemicalUsage> getAllChemicalUsage();
 
     public List<Object[]> getChemicalIdsAndNicsByFarmlandID(int farmlandID);
+
+    public List<ChemicalUsage> getChemicalByFarmland(int farmlandID);
 }

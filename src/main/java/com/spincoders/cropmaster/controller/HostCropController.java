@@ -27,4 +27,10 @@ public class HostCropController {
         return hostCropService.getAllHostCrop();
     }
 
+    @GetMapping("/getDisease/{farmlandID}")
+    public List<HostCrop> getDiseaseByFarmland(@PathVariable int farmlandID){
+        return hostCropService.getDiseaseByFarmland(farmlandID);
+    }
+
+
 }

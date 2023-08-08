@@ -28,4 +28,9 @@ public class ChemicalUsageImplementation implements ChemicalUsageService{
         return chemicalUsageRepositary.findChemicalIdsAndNicsByFarmlandID(farmlandID);
 
     }
+
+    @Override
+    public List<ChemicalUsage> getChemicalByFarmland(int farmlandID) {
+        return chemicalUsageRepositary.findChemicalUsageByFarmlandID(farmlandID);
+    }
 }

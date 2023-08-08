@@ -22,4 +22,9 @@ public class HostCropImplementation implements HostCropService {
     public List<HostCrop> getAllHostCrop() {
         return hostCropRepositary.findAll();
     }
+
+    @Override
+    public List<HostCrop> getDiseaseByFarmland(int farmlandID) {
+        return hostCropRepositary.findDiseaseByFarmland(farmlandID);
+    }
 }

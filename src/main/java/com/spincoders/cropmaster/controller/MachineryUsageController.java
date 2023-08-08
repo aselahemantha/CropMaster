@@ -32,4 +32,10 @@ public class MachineryUsageController {
         return machineryUsageService.getMachineIdsAndNicsByFarmlandID(farmlandID);
     }
 
+    @GetMapping("/getMachinery/{farmlandID}")
+    public List<MachineryUsage> getMachineryByFarmland(@PathVariable int farmlandID){
+        return machineryUsageService.getMachineByFarmland(farmlandID);
+    }
+
+
 }
