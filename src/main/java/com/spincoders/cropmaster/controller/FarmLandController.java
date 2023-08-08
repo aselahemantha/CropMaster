@@ -74,7 +74,7 @@ public class FarmLandController {
 
     @GetMapping("/nic")
     public List<Farmland> getFarmlandNic() {
-        return farmLandService.getFarmlandNoNic();
+        return farmLandService.getFarmlandNic();
     }
 
     @GetMapping("getCrop/{farmlandId}")

@@ -2,6 +2,7 @@ package com.spincoders.cropmaster.controller;
 import com.spincoders.cropmaster.model.Farmer;
 import com.spincoders.cropmaster.service.FarmerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,9 +18,9 @@ public class FarmerController {
     private FarmerService farmerService;
 
     @PostMapping("/addNew")
-    public String add(@RequestBody Farmer farmer) {
-        farmerService.saveFarmer(farmer);
-        return "New Farmer is added";
+    public ResponseEntity<Farmer> add(@RequestBody Farmer farmer) {
+        Farmer savedFarmer = farmerService.saveFarmer(farmer);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedFarmer);
     }
 
     @GetMapping("/getAll")

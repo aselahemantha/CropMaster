@@ -21,6 +21,10 @@ public class ChemicalUsage {
     @Column(name = "chemicalID")
     private int chemicalID;
 
+    private String chemicalName;
+
+    private String date;
+
     public ChemicalUsage() {
     }
 
@@ -54,5 +58,21 @@ public class ChemicalUsage {
 
     public void setChemicalID(int chemicalID) {
         this.chemicalID = chemicalID;
+    }
+
+    public String getChemicalName() {
+        return chemicalName;
+    }
+
+    public void setChemicalName(String chemicalName) {
+        this.chemicalName = chemicalName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -3,6 +3,7 @@ package com.spincoders.cropmaster.service;
 import com.spincoders.cropmaster.model.Farmer;
 import com.spincoders.cropmaster.repositary.FarmerRepositary;
 import jakarta.persistence.Access;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,8 @@ public class FarmerImplementation implements FarmerService{
 
     @Override
     public Farmer saveFarmer(Farmer farmer) {
+        String hashedPassword = BCrypt.hashpw(farmer.getPassword(), BCrypt.gensalt());
+        farmer.setPassword(hashedPassword);
         return farmerRepositary.save(farmer);
     }
 
@@ -34,7 +37,7 @@ public class FarmerImplementation implements FarmerService{
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"Invalid NIC\"}");
         }
 
-        if (password.equals(farmer.getPassword())) {
+        if (BCrypt.checkpw(password, farmer.getPassword())) {
             return ResponseEntity.ok("{\"message\": \"Login successful for NIC: " + nic + "\"}");
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"error\": \"Wrong password\"}");

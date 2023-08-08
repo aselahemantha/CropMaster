@@ -20,6 +20,10 @@ public class MachineryUsage {
     @Column(name = "machineryID")
     private int machineryID;
 
+    private String machineryName;
+
+    private String date;
+
     public MachineryUsage() {
     }
 
@@ -53,5 +57,21 @@ public class MachineryUsage {
 
     public void setMachineryID(int machineryID) {
         this.machineryID = machineryID;
+    }
+
+    public String getMachineryName() {
+        return machineryName;
+    }
+
+    public void setMachineryName(String machineryName) {
+        this.machineryName = machineryName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -3,6 +3,7 @@ package com.spincoders.cropmaster.service;
 import com.spincoders.cropmaster.model.Farmer;
 import com.spincoders.cropmaster.model.Owner;
 import com.spincoders.cropmaster.repositary.OwnerRepositary;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class OwnerImplementation implements OwnerService {
 
     @Override
     public Owner saveOwner(Owner owner) {
+        // Hash the password before saving
+        String hashedPassword = BCrypt.hashpw(owner.getPassword(), BCrypt.gensalt());
+        owner.setPassword(hashedPassword);
         return ownerRepositary.save(owner);
     }
 
@@ -27,7 +31,7 @@ public class OwnerImplementation implements OwnerService {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"Invalid NIC\"}");
         }
 
-        if (password.equals(owner.getPassword())) {
+        if (BCrypt.checkpw(password, owner.getPassword())) {
             return ResponseEntity.ok("{\"message\": \"Login successful for NIC: " + nic + "\"}");
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"error\": \"Wrong password\"}");

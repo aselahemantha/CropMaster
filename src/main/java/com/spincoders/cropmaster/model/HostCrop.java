@@ -16,9 +16,13 @@ public class HostCrop {
     @Column(name = "diseaseID")
     private int diseaseID;
 
+    @Column(name = "diseaseName")
+    private String diseaseName;
+
     @Column(name = "nic")
     private String nic;
 
+    private String date;
 
 
     public HostCrop() {
@@ -55,4 +59,22 @@ public class HostCrop {
     public void setNic(String nic) {
         this.nic = nic;
     }
+
+    public String getDiseaseName() {
+        return diseaseName;
+    }
+
+    public void setDiseaseName(String diseaseName) {
+        this.diseaseName = diseaseName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
 }

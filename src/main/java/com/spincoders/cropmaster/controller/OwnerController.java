@@ -5,6 +5,7 @@ import com.spincoders.cropmaster.model.Farmer;
 import com.spincoders.cropmaster.model.Owner;
 import com.spincoders.cropmaster.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +20,9 @@ public class OwnerController {
     private OwnerService ownerService;
 
     @PostMapping("/addNew")
-    public String add(@RequestBody Owner owner) {
-        ownerService.saveOwner(owner);
-        return "New Owner is added";
+    public ResponseEntity<Owner> add(@RequestBody Owner owner) {
+        Owner savedOwner = ownerService.saveOwner(owner);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedOwner);
     }
 
     @PostMapping("/login")

@@ -23,7 +23,7 @@ public interface FarmLandRepositary extends JpaRepository<Farmland, Integer> {
     @Query("SELECT u FROM Farmland u WHERE u.nic = ''")
     List<Farmland> findFarmlandNoNic();
 
-    @Query("SELECT u FROM Farmland u WHERE u.nic != ''")
+    @Query("SELECT u FROM Farmland u WHERE u.nic is not null ")
     List<Farmland> findFarmlandNic();
 
 
